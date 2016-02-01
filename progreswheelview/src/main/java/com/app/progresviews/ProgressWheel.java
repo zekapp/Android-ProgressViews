@@ -100,7 +100,9 @@ public class ProgressWheel extends View {
         mCirclePaint.setStrokeWidth(mBarWidth);
 
         mCountTextPaint.setColor(mCountTextColor);
+        mCountTextPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
         mDefTextPaint.setColor(mDefTextColor);
+        mDefTextPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
     }
 
     private void setupBounds(){

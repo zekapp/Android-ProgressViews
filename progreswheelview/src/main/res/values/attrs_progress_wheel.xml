@@ -11,4 +11,14 @@
         <attr name="defTextSize"    format="dimension"/>
         <attr name="percentage"    format="integer"/>
     </declare-styleable>
+
+    <declare-styleable name="ProgressLine">
+        <attr name="value"      format="string"/>
+        <attr name="definition" format="string"/>
+        <attr name="lineBarWidth" format="string"/>
+        <attr name="lineProgressColor"  format="color"/>
+        <attr name="lineDefTextSize"    format="dimension"/>
+        <attr name="valueDefTextSize"    format="dimension"/>
+        <attr name="valuePercentage"    format="integer"/>
+    </declare-styleable>
 </resources>

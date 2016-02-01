@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/zekapp/Android-ProgressViews'
     gitUrl = 'https://github.com/zekapp/Android-ProgressViews.git'
 
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.2'
 
     developerId = 'zekapp'
     developerName = 'Zeki Guler'
@@ -32,7 +32,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0.1"
+        versionName "1.0.2"
     }
     buildTypes {
         release {
@@ -52,4 +52,4 @@ apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
 
 // usage
-// compile 'com.com.zekapp.library:fb-com.zekapp.library:1.0.0'
+// compile 'com.zekapp.library:progress-views:1.0.1'

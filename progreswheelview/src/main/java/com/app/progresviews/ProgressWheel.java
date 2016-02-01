@@ -19,7 +19,7 @@ public class ProgressWheel extends View {
 
     //Sizes (with defaults)
     private float  mBarWidth = 24f;
-    private float mCountTextSize= 24; // TODO: use a default from R.dimen...
+    private float mCountTextSize= 48; // TODO: use a default from R.dimen...
     private float mDefTextSize = 24;
     private int layoutHeight = 0;
     private int layoutWidth = 0;
@@ -47,8 +47,8 @@ public class ProgressWheel extends View {
     private TextPaint mDefTextPaint = new TextPaint();
 
 
-    private String mCountText = " "; // TODO: use a default from R.string...
-    private String mDefText = " "; // TODO: use a default from R.string...
+    private String mCountText = "10,000"; // TODO: use a default from R.string...
+    private String mDefText = "Steps"; // TODO: use a default from R.string...
 
 
     private float mCountTextWidth;
@@ -57,7 +57,7 @@ public class ProgressWheel extends View {
     private float mDefTextWidth;
 
     // Set percentage
-    private int mPercentage = 0;
+    private int mPercentage = 60;
 
     public ProgressWheel(Context context) {
         super(context);
@@ -135,13 +135,13 @@ public class ProgressWheel extends View {
         mCountTextPaint.setTextSize(mCountTextSize);
         Paint.FontMetrics fontMetrics = mCountTextPaint.getFontMetrics();
         mCountTextHeight = fontMetrics.bottom;
-        mCountTextWidth = mCountTextPaint.measureText(mCountText);
+        mCountTextWidth = mCountTextPaint.measureText(mCountText == null || mCountText.isEmpty()?" ":mCountText);
 
         // Definition text
         mDefTextPaint.setTextSize(mDefTextSize);
         Paint.FontMetrics fontDefMetrics = mDefTextPaint.getFontMetrics();
         mDefTextHeight = fontDefMetrics.bottom;
-        mDefTextWidth = mDefTextPaint.measureText(mCountText);
+        mDefTextWidth = mDefTextPaint.measureText( mDefText == null || mDefText.isEmpty()?" " : mDefText);
     }
 
     private void init(AttributeSet attrs, int defStyle) {
@@ -149,8 +149,11 @@ public class ProgressWheel extends View {
         final TypedArray a = getContext().obtainStyledAttributes(
                 attrs, R.styleable.ProgressWheel, defStyle, 0);
 
-        mCountText      = a.getString(R.styleable.ProgressWheel_countText);
-        mDefText = a.getString(R.styleable.ProgressWheel_definitionText);
+        if(a.hasValue(R.styleable.ProgressWheel_countText))
+            mCountText  =    a.getString(R.styleable.ProgressWheel_countText);
+        if(a.hasValue(R.styleable.ProgressWheel_definitionText))
+            mDefText = a.getString(R.styleable.ProgressWheel_definitionText);
+
         mBarWidth       = a.getDimension(R.styleable.ProgressWheel_barWidth, mBarWidth);
         mProgressColor  = a.getColor(R.styleable.ProgressWheel_progressColor, mProgressColor);
         mRimColor       = a.getColor(R.styleable.ProgressWheel_rimColor, mRimColor);

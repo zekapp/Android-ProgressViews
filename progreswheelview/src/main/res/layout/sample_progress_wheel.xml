@@ -27,8 +27,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_margin="15dp">
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="0dp"
@@ -42,9 +41,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.9"
                 app:definition="Daily Steps"
-                app:value="10000"
+                app:value="10,000"
                 app:lineBarWidth="10dp"
-                app:valuePercentage="80"
+                app:valuePercentage="99"
                 />
 
         </LinearLayout>

@@ -12,6 +12,8 @@ import android.view.View;
 
 import com.app.progreswheelview.R;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by Zeki Guler on 01,February,2016
  * ©2015 Appscore. All Rights Reserved
@@ -47,17 +49,21 @@ public class ProgressLine extends View {
     private int defaultPaddingRight = 30;
     private int widthPaddingBetweenBars = 3;
 
+    //PAdding (with defaults)
+    private int leftPadding;
+    private int rithPadding;
+
 
 
     private String mValueText = "6,0090";
     private String mDefText = "daily steps";
-    private float mDefTextHeight;
-    private float mDefTextWidth;
-    private float mValueTextHeight;
     private float mValueTextWidth;
 
     private int mPercentage = 70;
+    private int mBarLenght;
+    private float mScale = 1;
 
+    private DecimalFormat mformatter = new DecimalFormat("#,###,###");
 
     public ProgressLine(Context context) {
         super(context);
@@ -90,10 +96,16 @@ public class ProgressLine extends View {
         mValueTextSize  = a.getDimension(R.styleable.ProgressLine_valueDefTextSize, mValueTextSize);
         mPercentage     = a.getInt(R.styleable.ProgressLine_valuePercentage, mPercentage);
 
+        calculateBarScale();
+
         a.recycle();
 
         // Update TextPaint and text measurements from attributes
         invalidate();
+    }
+
+    private void calculateBarScale() {
+        mScale = mPercentage > 100 ?  1 :  mPercentage * 0.01f;
     }
 
     @Override
@@ -126,58 +138,71 @@ public class ProgressLine extends View {
         mUnderLinePaint.setStrokeWidth(3);
 
 
+        mBarLenght = this.getWidth() - defaultPaddingLeft - defaultPaddingRight - getPaddingLeft() - getPaddingRight();
+
     }
 
     private void setupBounds() {
 
         // Count number text
         mValueTextPaint.setTextSize(mValueTextSize);
-        Paint.FontMetrics fontMetrics = mValueTextPaint.getFontMetrics();
-        mValueTextHeight = fontMetrics.bottom;
         mValueTextWidth = mValueTextPaint.measureText(mValueText);
 
 
         // Definition text
         mDefTextPaint.setTextSize(mDefTextSize);
-        Paint.FontMetrics fontDefMetrics = mDefTextPaint.getFontMetrics();
-        mDefTextHeight = fontDefMetrics.bottom;
-        mDefTextWidth = mDefTextPaint.measureText(mDefText);
-
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-
+        float startX_V = getPaddingLeft() + defaultPaddingLeft;
         canvas.drawText(mValueText,
-                getPaddingLeft() + defaultPaddingLeft,
+                startX_V,
                 this.getHeight() / 2 ,
                 mValueTextPaint
         );
 
+        float start_D = startX_V + mValueTextWidth + paddingBetweenText;
         canvas.drawText(mDefText,
-                getPaddingLeft() + defaultPaddingLeft + paddingBetweenText + mValueTextWidth ,
+                start_D,
                 this.getHeight() / 2 ,
                 mDefTextPaint
         );
 
-
-        float endX = (float) (getWidth() * mPercentage / 100) - defaultPaddingRight - getPaddingRight();
-        float startX = getPaddingLeft() + defaultPaddingLeft;
-
+        float startX_P    = getPaddingLeft() + defaultPaddingLeft;
+        float endX_P      = startX_P + mBarLenght * mScale;
         canvas.drawLine(
-                startX,
+                startX_P,
                 this.getHeight() / 2 + marginTopBars,
-                endX,
+                endX_P,
                 this.getHeight() / 2 + marginTopBars,
                 mProgressLinePaint);
 
+        float startX_U = endX_P + widthPaddingBetweenBars;
+        float endX_U   = startX_U + mBarLenght * (1 - mScale);
         canvas.drawLine(
-                (float) (getWidth() * mPercentage / 100) + widthPaddingBetweenBars,
+                startX_U,
                 this.getHeight() / 2 + mBarWidth / 2 + marginTopBars,
-                (float) (getWidth()) - getPaddingRight() - defaultPaddingRight,
+                endX_U,
                 this.getHeight() / 2  + mBarWidth / 2 + marginTopBars,
                 mUnderLinePaint);
+    }
+
+    public void setmDefText(String mDefText) {
+        this.mDefText = mDefText;
+        invalidate();
+    }
+
+    public void setmValueText(int value) {
+        this.mValueText = mformatter.format(value);
+        invalidate();
+    }
+
+    public void setmPercentage(int mPercentage) {
+        this.mPercentage = mPercentage;
+        calculateBarScale();
+        invalidate();
     }
 }

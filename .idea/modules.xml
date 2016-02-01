@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Android-ProgressWheel.iml" filepath="$PROJECT_DIR$/Android-ProgressWheel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Android-ProgressViews.iml" filepath="$PROJECT_DIR$/Android-ProgressViews.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/progreswheelview/progreswheelview.iml" filepath="$PROJECT_DIR$/progreswheelview/progreswheelview.iml" />
     </modules>

@@ -16,7 +16,7 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity {
 
     private ProgressWheel mProgressWheel;
-    private int per = 5;
+    private int per = 72;
     private int step = 20000;
     private DecimalFormat mformatter;
 

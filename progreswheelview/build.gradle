@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 
+def libVer = '1.0.5'
+
 ext {
     bintrayRepo = 'Maven'
     bintrayName = 'progress-views'
@@ -13,7 +15,7 @@ ext {
     siteUrl = 'https://github.com/zekapp/Android-ProgressViews'
     gitUrl = 'https://github.com/zekapp/Android-ProgressViews.git'
 
-    libraryVersion = '1.0.4'
+    libraryVersion = libVer
 
     developerId = 'zekapp'
     developerName = 'Zeki Guler'
@@ -32,7 +34,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0.4"
+        versionName libVer
     }
     buildTypes {
         release {

@@ -1,0 +1,14 @@
+<resources>
+    <declare-styleable name="ProgressWheel">
+        <attr name="countText"      format="string"/>
+        <attr name="definitionText" format="string"/>
+        <attr name="progressColor"  format="color"/>
+        <attr name="rimColor"       format="color"/>
+        <attr name="countTextColor" format="color"/>
+        <attr name="defTextColor"   format="color"/>
+        <attr name="barWidth"       format="dimension"/>
+        <attr name="countTextSize"  format="dimension"/>
+        <attr name="defTextSize"    format="dimension"/>
+        <attr name="percentage"    format="integer"/>
+    </declare-styleable>
+</resources>

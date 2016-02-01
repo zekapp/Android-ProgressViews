@@ -43,7 +43,7 @@
                 app:definition="Daily Steps"
                 app:value="10,000"
                 app:lineBarWidth="10dp"
-                app:valuePercentage="99"
+                app:valuePercentage="19"
                 />
 
         </LinearLayout>

@@ -41,5 +41,34 @@
     </LinearLayout>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/progress">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:src="@android:drawable/btn_star"
+            android:layout_gravity="center_vertical"/>
+
+        <com.app.progresviews.ProgressLine
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"
+            app:definition="daily steps"
+            app:value="10,000"
+            app:lineBarWidth="7dp"
+            app:valuePercentage="55"
+            app:valueDefTextSize="20sp"
+            app:lineProgressColor="#43bd9f"
+            app:underLineColor="@android:color/darker_gray"
+            />
+
+    </LinearLayout>
+
+
 
 </RelativeLayout>

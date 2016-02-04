@@ -15,10 +15,12 @@
     <declare-styleable name="ProgressLine">
         <attr name="value"      format="string"/>
         <attr name="definition" format="string"/>
-        <attr name="lineBarWidth" format="string"/>
+        <attr name="lineBarWidth" format="dimension"/>
         <attr name="lineProgressColor"  format="color"/>
         <attr name="lineDefTextSize"    format="dimension"/>
         <attr name="valueDefTextSize"    format="dimension"/>
+        <attr name="underLineSize"    format="dimension"/>
+        <attr name="underLineColor"  format="color"/>
         <attr name="valuePercentage"    format="integer"/>
     </declare-styleable>
 </resources>

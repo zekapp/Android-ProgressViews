@@ -22,6 +22,7 @@ public class ProgressLine extends View {
 
     //Sizes (with defaults)
     private float  mBarWidth = 24f;
+    private float mUnderLineSize = 5f;
     private float mValueTextSize = 48;
     private float mDefTextSize = 24;
     private int layoutHeight = 0;
@@ -47,7 +48,7 @@ public class ProgressLine extends View {
     private int paddingBetweenText = 20;
     private int defaultPaddingLeft  = 30;
     private int defaultPaddingRight = 30;
-    private int widthPaddingBetweenBars = 3;
+    private int widthPaddingBetweenBars = 9;
 
     //PAdding (with defaults)
     private int leftPadding;
@@ -95,6 +96,8 @@ public class ProgressLine extends View {
         mDefTextSize    = a.getDimension(R.styleable.ProgressLine_lineDefTextSize, mDefTextSize);
         mValueTextSize  = a.getDimension(R.styleable.ProgressLine_valueDefTextSize, mValueTextSize);
         mPercentage     = a.getInt(R.styleable.ProgressLine_valuePercentage, mPercentage);
+        mUnderLineSize  = a.getDimension(R.styleable.ProgressLine_underLineSize, mUnderLineSize);
+        mUnderLineColor = a.getColor(R.styleable.ProgressLine_underLineColor, mUnderLineColor);
 
         calculateBarScale();
 
@@ -135,7 +138,7 @@ public class ProgressLine extends View {
         mUnderLinePaint.setColor(mUnderLineColor);
         mUnderLinePaint.setAntiAlias(true);
         mUnderLinePaint.setStyle(Paint.Style.FILL);
-        mUnderLinePaint.setStrokeWidth(3);
+        mUnderLinePaint.setStrokeWidth(mUnderLineSize);
 
 
         mBarLenght = this.getWidth() - defaultPaddingLeft - defaultPaddingRight - getPaddingLeft() - getPaddingRight();

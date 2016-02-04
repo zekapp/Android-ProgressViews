@@ -8,7 +8,7 @@ A imageView with a tool to calculate the pixel between items in the picture
 via Gradle:
 
     dependencies {
-      compile 'com.zekapp.library:progreswheelview:1.0.5'
+      compile 'com.zekapp.library:progreswheelview:1.0.6'
     }
     
 ## Usage

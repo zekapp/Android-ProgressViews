@@ -23,6 +23,7 @@ public class ProgressWheel extends View {
     private float mDefTextSize = 24;
     private int layoutHeight = 0;
     private int layoutWidth = 0;
+    private float mMarginBtwTexts = 20f;
 
     //Colors (with defaults)
     private int    mProgressColor   = Color.GREEN;
@@ -164,6 +165,7 @@ public class ProgressWheel extends View {
         mCountTextSize  = a.getDimension(R.styleable.ProgressWheel_countTextSize, mCountTextSize);
         mDefTextSize    = a.getDimension(R.styleable.ProgressWheel_defTextSize, mDefTextSize);
         mPercentage     = a.getInt(R.styleable.ProgressWheel_percentage, mPercentage);
+        mMarginBtwTexts = a.getDimension(R.styleable.ProgressWheel_marginBtwText, mMarginBtwTexts);
 
         a.recycle();
 
@@ -194,7 +196,7 @@ public class ProgressWheel extends View {
 
         canvas.drawText(mDefText,
                 this.getWidth() / 2 - horizontalDefTextOffset,
-                this.getHeight() / 2 + mCountTextHeight + 20,
+                this.getHeight() / 2 + mCountTextHeight + mMarginBtwTexts,
                 mDefTextPaint
         );
     }

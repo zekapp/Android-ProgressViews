@@ -9,6 +9,7 @@
         <attr name="barWidth"       format="dimension"/>
         <attr name="countTextSize"  format="dimension"/>
         <attr name="defTextSize"    format="dimension"/>
+        <attr name="marginBtwText"  format="dimension"/>
         <attr name="percentage"    format="integer"/>
     </declare-styleable>
 

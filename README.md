@@ -8,15 +8,17 @@ A imageView with a tool to calculate the pixel between items in the picture
 via Gradle:
 
     dependencies {
-      compile 'com.zekapp.library:progreswheelview:1.0.6'
+      compile 'com.zekapp.library:progreswheelview:1.0.7'
     }
     
 ## Usage
 
        <com.app.progresviews.ProgressWheel
+            android:id="@+id/wheelprogress"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:barWidth="17dp"
+            app:marginBtwText= "15dp"
             app:countText="931,199"
             app:definitionText="Steps"
             app:countTextColor="@android:color/black"

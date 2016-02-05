@@ -1,5 +1,5 @@
-# Android-PixelMeasuringTool
-A imageView with a tool to calculate the pixel between items in the picture
+# Android-WheelProgress
+A progress bar for my ongoing project.
 
 ![Check Diagram](art/pic-1.png)
 
@@ -27,19 +27,6 @@ via Gradle:
             app:defTextSize="10sp"
             app:countTextSize="20sp"
             app:percentage="90"/>
-
-## Getting Pixel Programmatically
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-            DecimalFormat mformatter = new DecimalFormat("#,###,###");
-            ProgressWheel mProgressWheel = (ProgressWheel) findViewById(R.id.progress);
-                    mProgressWheel.setPercentage(30);
-                    mProgressWheel.setStepCountText(mformatter.format(1000000));
-        }
-
 
 ## License
 

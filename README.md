@@ -8,7 +8,7 @@ A progress bar for my ongoing project.
 via Gradle:
 
     dependencies {
-      compile 'com.zekapp.library:progreswheelview:1.0.8'
+      compile 'com.zekapp.library:progreswheelview:1.0.9'
     }
     
 ## Usage

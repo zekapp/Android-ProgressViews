@@ -5,10 +5,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.app.progresviews.ProgressLine;
 import com.app.progresviews.ProgressWheel;
 
 import java.text.DecimalFormat;
@@ -19,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
     private int per = 72;
     private int step = 20000;
     private DecimalFormat mformatter;
+
+    private ProgressLine mProgressLine;
+    private int mValue = 90000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mProgressWheel = (ProgressWheel) findViewById(R.id.progress);
+        mProgressLine = (ProgressLine) findViewById(R.id.progress_line);
 
         mformatter = new DecimalFormat("#,###,###");
 
@@ -80,5 +85,17 @@ public class MainActivity extends AppCompatActivity {
     public void change(View view) {
         mProgressWheel.setPercentage(per = per + 72);
         mProgressWheel.setStepCountText(mformatter.format(step = step + 20000));
+    }
+
+    public void changeLine(View view) {
+        mValue += 10000;
+        mProgressLine.setmValueText(String.valueOf(mValue));
+    }
+
+    public void clearAllData(View view) {
+        mValue = 0;
+        per = 0;
+        step = 0;
+        mProgressLine.setmValueText(String.valueOf(mValue));
     }
 }

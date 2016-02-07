@@ -200,16 +200,22 @@ public class ProgressLine extends View {
 
     public void setmValueText(int value) {
         this.mValueText = mformatter.format(value);
+        setupBounds();
+        setupPaints();
         invalidate();
     }
 
     public void setmValueText(String value) {
         this.mValueText =  value;
+        setupBounds();
+        setupPaints();
         invalidate();
     }
 
     public void setmPercentage(int mPercentage) {
         this.mPercentage = mPercentage;
+        setupBounds();
+        setupPaints();
         calculateBarScale();
         invalidate();
     }

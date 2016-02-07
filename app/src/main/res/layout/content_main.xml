@@ -34,10 +34,25 @@
         android:orientation="horizontal"
         android:layout_centerInParent="true">
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Change"
-            android:onClick="change"/>
+            android:text="Change Wheel"
+            android:onClick="change"
+            android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Change Line"
+            android:onClick="changeLine"
+            android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Clear Data"
+            android:onClick="clearAllData"
+            android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 
 
@@ -55,6 +70,7 @@
             android:layout_gravity="center_vertical"/>
 
         <com.app.progresviews.ProgressLine
+            android:id="@+id/progress_line"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.9"

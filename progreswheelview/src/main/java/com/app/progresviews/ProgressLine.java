@@ -203,6 +203,11 @@ public class ProgressLine extends View {
         invalidate();
     }
 
+    public void setmValueText(String value) {
+        this.mValueText =  value;
+        invalidate();
+    }
+
     public void setmPercentage(int mPercentage) {
         this.mPercentage = mPercentage;
         calculateBarScale();

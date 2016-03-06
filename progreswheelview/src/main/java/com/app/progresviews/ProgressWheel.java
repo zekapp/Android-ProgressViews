@@ -1,5 +1,6 @@
 package com.app.progresviews;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -212,7 +213,22 @@ public class ProgressWheel extends View {
     }
 
     public void setPercentage(int per) {
-        mPercentage = per;
-        invalidate();
+        startAnimation(per);
+    }
+
+    private void startAnimation(int per) {
+        int diff = per - mPercentage;
+        new ValueAnimator();
+        ValueAnimator valueAnimator = ValueAnimator
+                .ofInt(mPercentage, mPercentage+diff)
+                .setDuration(1000);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                mPercentage = (int)animation.getAnimatedValue();
+                invalidate();
+            }
+        });
+        valueAnimator.start();
     }
 }

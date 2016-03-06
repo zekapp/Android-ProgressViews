@@ -1,5 +1,6 @@
 package com.app.progresviews;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -212,11 +213,23 @@ public class ProgressLine extends View {
         invalidate();
     }
 
-    public void setmPercentage(int mPercentage) {
-        this.mPercentage = mPercentage;
-        setupBounds();
-        setupPaints();
-        calculateBarScale();
-        invalidate();
+    public void setmPercentage(int percetage) {
+
+        int diff = percetage - mPercentage;
+        new ValueAnimator();
+        ValueAnimator valueAnimator = ValueAnimator
+                .ofInt(mPercentage, mPercentage+diff)
+                .setDuration(1000);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                mPercentage = (int)animation.getAnimatedValue();
+                setupBounds();
+                setupPaints();
+                calculateBarScale();
+                invalidate();
+            }
+        });
+        valueAnimator.start();
     }
 }

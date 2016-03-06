@@ -19,10 +19,13 @@ public class MainActivity extends AppCompatActivity {
     private ProgressWheel mProgressWheel;
     private int per = 72;
     private int step = 20000;
+
+    private int perL   = 10;
+    private int mValue = 1000;
+
     private DecimalFormat mformatter;
 
     private ProgressLine mProgressLine;
-    private int mValue = 90000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +51,17 @@ public class MainActivity extends AppCompatActivity {
 
         mProgressWheel.setPercentage(per);
         mProgressWheel.setStepCountText(mformatter.format(step));
+
+        mProgressLine.setmPercentage(perL);
+        mProgressLine.setmValueText(String.valueOf(mValue));
     }
 
     private void clearSteps() {
         mProgressWheel.setPercentage(per = 0);
         mProgressWheel.setStepCountText(mformatter.format(step = 0));
+
+        mProgressLine.setmPercentage(mValue = 0);
+        mProgressLine.setmValueText(String.valueOf(mValue));
     }
 
     @Override
@@ -88,14 +97,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeLine(View view) {
-        mValue += 10000;
+        mValue += 1000;
         mProgressLine.setmValueText(String.valueOf(mValue));
+        mProgressLine.setmPercentage(perL = perL + 10);
     }
 
     public void clearAllData(View view) {
-        mValue = 0;
-        per = 0;
         step = 0;
+        per = 0;
+
+        perL = 0;
+        mValue = 0;
+
+        mProgressLine.setmPercentage(perL);
         mProgressLine.setmValueText(String.valueOf(mValue));
+
+        mProgressWheel.setPercentage(per);
+        mProgressWheel.setStepCountText(mformatter.format(step));
     }
 }

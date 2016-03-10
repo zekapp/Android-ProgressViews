@@ -13,7 +13,7 @@ via Gradle:
       compile 'com.zekapp.library:progreswheelview:1.1.2'
     }
     
-## Usage
+## Usage of Dial progress bar
 
        <com.app.progresviews.ProgressWheel
             android:id="@+id/wheelprogress"
@@ -29,6 +29,23 @@ via Gradle:
             app:defTextSize="10sp"
             app:countTextSize="20sp"
             app:percentage="90"/>
+            
+            
+## Usage of Line progress bar
+
+        <com.app.progresviews.ProgressLine
+            android:id="@+id/progress_line"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"
+            app:definition="daily steps"
+            app:value="10,000"
+            app:lineBarWidth="7dp"
+            app:valuePercentage="55"
+            app:valueDefTextSize="20sp"
+            app:lineProgressColor="#43bd9f"
+            app:underLineColor="@android:color/darker_gray"
+            />
 
 ## License
 

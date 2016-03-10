@@ -3,6 +3,8 @@ A progress bar for my ongoing project.
 
 ![Check Diagram](art/pic-1.png)
 
+![Check Diagram](art/pic-2.png)
+
 ## Download
 
 via Gradle:

@@ -10,7 +10,7 @@ A progress bar for my ongoing project.
 via Gradle:
 
     dependencies {
-      compile 'com.zekapp.library:progreswheelview:1.1.3'
+      compile 'com.zekapp.library:progreswheelview:1.1.4'
     }
     
 ## Usage of Dial progress bar

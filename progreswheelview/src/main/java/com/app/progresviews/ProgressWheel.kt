@@ -182,9 +182,8 @@ class ProgressWheel : View {
         canvas.drawArc(mRimBounds, 0f, 360f, false, mCirclePaint)
         canvas.drawArc(mProgressBounds, -90f, mPercentage.toFloat(), false, mBarPaint)
 
-        val horizontalCountTextOffset = mCountTextPaint.measureText(mCountText) / 2
-
         if (mCountText != null){
+            val horizontalCountTextOffset = mCountTextPaint.measureText(mCountText) / 2
             canvas.drawText(mCountText!!,
                     this.width / 2 - horizontalCountTextOffset,
                     (this.height / 2).toFloat() + if (mDefText == null) mCountTextSize/2 else 0f,
@@ -192,9 +191,9 @@ class ProgressWheel : View {
             )
         }
 
-        val horizontalDefTextOffset = mDefTextPaint.measureText(mDefText) / 2
 
         if (mDefText != null){
+            val horizontalDefTextOffset = mDefTextPaint.measureText(mDefText) / 2
             canvas.drawText(mDefText!!,
                     this.width / 2 - horizontalDefTextOffset,
                     (this.height / 2).toFloat() + mCountTextHeight + mMarginBtwTexts,

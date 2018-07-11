@@ -23,7 +23,6 @@
         app:countTextSize="20sp"
         app:defTextColor="@android:color/black"
         app:defTextSize="10sp"
-        app:definitionText="Steps"
         app:percentage="90"
         app:progressColor="#64b324"/>
 

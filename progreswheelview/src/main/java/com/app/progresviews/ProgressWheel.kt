@@ -213,6 +213,11 @@ class ProgressWheel : View {
         invalidate()
     }
 
+    fun setProgressColor(color: Int){
+        mProgressColor = color
+        invalidate()
+    }
+
     fun setPercentage(per: Int) {
         startAnimation(per)
     }

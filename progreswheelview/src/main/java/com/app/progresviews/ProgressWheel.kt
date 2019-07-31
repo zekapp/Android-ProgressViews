@@ -120,16 +120,16 @@ class ProgressWheel : View {
         val height = height
 
         mRimBounds = RectF(
-                paddingLeft + mBarWidth,
-                paddingTop + mBarWidth,
-                width.toFloat() - paddingRight.toFloat() - mBarWidth,
-                height.toFloat() - paddingBottom.toFloat() - mBarWidth)
+                paddingLeft + mBarWidth / 2f,
+                paddingTop + mBarWidth / 2f,
+                width.toFloat() - paddingRight.toFloat() - mBarWidth / 2f,
+                height.toFloat() - paddingBottom.toFloat() - mBarWidth / 2f)
 
         mProgressBounds = RectF(
-                paddingLeft + mBarWidth,
-                paddingTop + mBarWidth,
-                width.toFloat() - paddingRight.toFloat() - mBarWidth,
-                height.toFloat() - paddingBottom.toFloat() - mBarWidth)
+                paddingLeft + mBarWidth / 2f,
+                paddingTop + mBarWidth / 2f,
+                width.toFloat() - paddingRight.toFloat() - mBarWidth / 2f,
+                height.toFloat() - paddingBottom.toFloat() - mBarWidth / 2f)
 
         // Count number text
         mCountTextPaint.textSize = mCountTextSize

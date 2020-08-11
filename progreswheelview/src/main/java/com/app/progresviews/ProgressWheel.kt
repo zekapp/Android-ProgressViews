@@ -219,6 +219,10 @@ class ProgressWheel : View {
     }
 
     fun setPercentage(per: Int) {
+        setPercentageInternal(per.times(360).div(100))
+    }
+
+    private fun setPercentageInternal(per: Int) {
         startAnimation(per)
     }
 
